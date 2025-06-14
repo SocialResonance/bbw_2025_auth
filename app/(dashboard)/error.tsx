@@ -21,8 +21,8 @@ export default function Error({
           Please complete setup
         </h1>
         <p>
-          Inside the Vercel Postgres dashboard, create a table based on the
-          schema defined in this repository.
+          Using a PostgreSQL client, connect to your local database and create a
+          table based on the schema defined in this repository.
         </p>
         <pre className="my-4 px-3 py-4 bg-black text-white rounded-lg max-w-2xl overflow-scroll flex text-wrap">
           <code>

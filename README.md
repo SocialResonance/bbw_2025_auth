@@ -24,40 +24,68 @@ This is a starter template using the following stack:
 
 This template uses the new Next.js App Router. This includes support for enhanced layouts, colocation of components, tests, and styles, component-level data fetching, and more.
 
-## Getting Started
+## Getting Started for Local Development
 
-During the deployment, Vercel will prompt you to create a new Postgres database. This will add the necessary environment variables to your project.
+These instructions will guide you through setting up the project to run on your local machine with a local PostgreSQL database.
 
-Inside the Vercel Postgres dashboard, create a table based on the schema defined in this repository.
+### Prerequisites
 
-```
-CREATE TYPE status AS ENUM ('active', 'inactive', 'archived');
+- [Node.js](https://nodejs.org/) (version 20.x or later)
+- [pnpm](https://pnpm.io/)
+- [PostgreSQL](https://www.postgresql.org/) installed and running.
 
-CREATE TABLE products (
-  id SERIAL PRIMARY KEY,
-  image_url TEXT NOT NULL,
-  name TEXT NOT NULL,
-  status status NOT NULL,
-  price NUMERIC(10, 2) NOT NULL,
-  stock INTEGER NOT NULL,
-  available_at TIMESTAMP NOT NULL
-);
-```
-
-Then, uncomment `app/api/seed.ts` and hit `http://localhost:3000/api/seed` to seed the database with products.
-
-Next, copy the `.env.example` file to `.env` and update the values. Follow the instructions in the `.env.example` file to set up your GitHub OAuth application.
+### 1. Clone the Repository and Install Dependencies
 
 ```bash
-npm i -g vercel
-vercel link
-vercel env pull
-```
-
-Finally, run the following commands to start the development server:
-
-```
+git clone https://github.com/your-username/your-repo-name.git # Change this to your repo URL
+cd your-repo-name
 pnpm install
+```
+
+### 2. Set Up Environment Variables
+
+Create a `.env` file in the root of the project. You can do this by copying the `.env.example` if it exists, or by creating a new file. Add the following content, replacing the placeholder values:
+
+```env
+# Example URL for a local PostgreSQL database
+POSTGRES_URL="postgresql://YOUR_USERNAME:YOUR_PASSWORD@localhost:5432/YOUR_DATABASE_NAME"
+
+# You can generate a new secret with `openssl rand -base64 32`
+NEXTAUTH_URL=http://localhost:3000
+AUTH_SECRET="YOUR_AUTH_SECRET"
+
+# GitHub OAuth credentials (optional, for authentication)
+AUTH_GITHUB_ID=
+AUTH_GITHUB_SECRET=
+```
+
+### 3. Create the Database
+
+Connect to your local PostgreSQL instance using a client like `psql` and create the database you specified in your `POSTGRES_URL`.
+
+```sql
+CREATE DATABASE your_database_name;
+```
+
+### 4. Run Database Migrations
+
+This project uses `drizzle-kit` to manage database schema migrations.
+
+- To generate a new migration file after making changes to the schema in `lib/schema.ts`:
+  ```bash
+  pnpm drizzle-kit generate
+  ```
+
+- To apply all pending migrations to your database:
+  ```bash
+  pnpm drizzle-kit migrate
+  ```
+
+Run the `migrate` command now to set up your initial tables.
+
+### 5. Run the Development Server
+
+```bash
 pnpm dev
 ```
 
