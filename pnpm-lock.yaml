@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@radix-ui/react-dialog':
-        specifier: ^1.1.4
+        specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.4
@@ -23,6 +23,12 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.1.6
         version: 1.2.7(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@rarimo/zk-passport':
+        specifier: ^0.1.2
+        version: 0.1.2
+      '@rarimo/zk-passport-react':
+        specifier: ^0.1.2
+        version: 0.1.2(react@19.0.0)
       '@types/node':
         specifier: 20.17.6
         version: 20.17.6
@@ -98,9 +104,16 @@ importers:
       typescript:
         specifier: 5.7.2
         version: 5.7.2
+      uuid:
+        specifier: ^11.1.0
+        version: 11.1.0
       zod:
         specifier: ^3.24.1
         version: 3.25.64
+    devDependencies:
+      '@types/uuid':
+        specifier: ^10.0.0
+        version: 10.0.0
 
 packages:
 
@@ -121,6 +134,12 @@ packages:
         optional: true
       nodemailer:
         optional: true
+
+  '@distributedlab/fetcher@1.0.0-rc.17':
+    resolution: {integrity: sha512-J3nwbZoP8htBdj4PsiaZd5+HV53ngoAbrV3H75Prl3Twgq2UERB656+0tHkAI/woAC4HDBGVggWm0/bLi8doIQ==}
+
+  '@distributedlab/jac@1.0.0-rc.17':
+    resolution: {integrity: sha512-8zDRkGAFmLeLnbRlg8aT5mkM/pdm/AUqDmhVhs0ZxP9jBiZDhMbKNm6WbKkyv9KwcifA/iqz3iQ+ClmMlmEPIg==}
 
   '@emnapi/runtime@1.4.3':
     resolution: {integrity: sha512-pBPWdu6MLKROBX05wSNKcNb++m5Er+KQ9QkB+WVM+pW2Kx9hoSrVTnu3BdkI5eBLZoKu/J6mW/B6i6bJB2ytXQ==}
@@ -933,6 +952,14 @@ packages:
   '@radix-ui/rect@1.1.1':
     resolution: {integrity: sha512-HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==}
 
+  '@rarimo/zk-passport-react@0.1.2':
+    resolution: {integrity: sha512-+6G2ATfwo4xrB557tSMUIj1ohrh2i8IlSlrt8TXzHy0gbXSdms2HL3Pa/we/y3I7TPeq2Lwb8dZ95Ap/X6XDHQ==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  '@rarimo/zk-passport@0.1.2':
+    resolution: {integrity: sha512-BVn/cq8iKoxhywthihPZ3RWLQshTvfjzbG/5jSt0u9BW/VY2SxzpRgX1lV3bOonLaEmibBqiANHdsU6dtBeY/Q==}
+
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
 
@@ -953,6 +980,9 @@ packages:
 
   '@types/react@19.0.0':
     resolution: {integrity: sha512-MY3oPudxvMYyesqs/kW1Bh8y9VqSmf+tzqw3ae8a9DZW68pUe3zAdHeI1jc6iAysuRdACnVknHP8AhwD4/dxtg==}
+
+  '@types/uuid@10.0.0':
+    resolution: {integrity: sha512-7gqG38EyHgyP1S+7+xomFtL+ZNHcKv6DwNaCZmJmo1vgMugyF3TCnXVg4t1uk89mLNwnLtnY3TpOpCOyp1/xHQ==}
 
   '@vercel/analytics@1.5.0':
     resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
@@ -1349,6 +1379,9 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -1590,6 +1623,11 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
+  qrcode.react@4.2.0:
+    resolution: {integrity: sha512-QpgqWi8rD9DsS9EP3z7BT+5lY5SFhsqGjpgW5DY/i3mK4M9DTBNz3ErMi8BWYEfI3L0d8GIbGmcdFAS1uIRGjA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -1811,6 +1849,14 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  uuid@11.1.0:
+    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
+
+  uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
+
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
@@ -1849,6 +1895,15 @@ snapshots:
       oauth4webapi: 3.5.2
       preact: 10.11.3
       preact-render-to-string: 5.2.3(preact@10.11.3)
+
+  '@distributedlab/fetcher@1.0.0-rc.17':
+    dependencies:
+      uuid: 9.0.1
+
+  '@distributedlab/jac@1.0.0-rc.17':
+    dependencies:
+      '@distributedlab/fetcher': 1.0.0-rc.17
+      lodash: 4.17.21
 
   '@emnapi/runtime@1.4.3':
     dependencies:
@@ -2468,6 +2523,16 @@ snapshots:
 
   '@radix-ui/rect@1.1.1': {}
 
+  '@rarimo/zk-passport-react@0.1.2(react@19.0.0)':
+    dependencies:
+      '@rarimo/zk-passport': 0.1.2
+      qrcode.react: 4.2.0(react@19.0.0)
+      react: 19.0.0
+
+  '@rarimo/zk-passport@0.1.2':
+    dependencies:
+      '@distributedlab/jac': 1.0.0-rc.17
+
   '@swc/counter@0.1.3': {}
 
   '@swc/helpers@0.5.15':
@@ -2493,6 +2558,8 @@ snapshots:
   '@types/react@19.0.0':
     dependencies:
       csstype: 3.1.3
+
+  '@types/uuid@10.0.0': {}
 
   '@vercel/analytics@1.5.0(next@15.1.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
     optionalDependencies:
@@ -2808,6 +2875,8 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  lodash@4.17.21: {}
+
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
@@ -3007,6 +3076,10 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+
+  qrcode.react@4.2.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
 
   queue-microtask@1.2.3: {}
 
@@ -3240,6 +3313,10 @@ snapshots:
       '@types/react': 19.0.0
 
   util-deprecate@1.0.2: {}
+
+  uuid@11.1.0: {}
+
+  uuid@9.0.1: {}
 
   which@2.0.2:
     dependencies:

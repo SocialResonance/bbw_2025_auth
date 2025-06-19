@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
+import { RarimoLogin } from '@/components/rarimo-login';
 import { signIn } from '@/lib/auth';
 
 export default function LoginPage() {
@@ -19,17 +20,20 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <form
-            action={async () => {
-              'use server';
-              await signIn('github', {
-                redirectTo: '/'
-              });
-            }}
-            className="w-full"
-          >
-            <Button className="w-full">Sign in with GitHub</Button>
-          </form>
+          <div className="w-full space-y-2">
+            <form
+              action={async () => {
+                'use server';
+                await signIn('github', {
+                  redirectTo: '/'
+                });
+              }}
+              className="w-full"
+            >
+              <Button className="w-full">Sign in with GitHub</Button>
+            </form>
+            <RarimoLogin />
+          </div>
         </CardFooter>
       </Card>
     </div>
